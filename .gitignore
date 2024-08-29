@@ -1,0 +1,8 @@
+*.o
+
+*~
+
+/test_program
+
+/build/
+
