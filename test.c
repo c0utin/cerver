@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include "DataStructures/linkedList.h"
+#include "DataStructures/queue.h"
 
 int main(){
 
 	struct LinkedListInt lli = newLinkedList();
-
+	struct Queue *q = newQueue(lli);
+	
 	for (int i = 0; i < 10; i++){
-		insertNodeIntAtN(0, 6, &lli);	
-		insertNodeIntAtN(0, 9, &lli);
+		push(6, q);
+		push(9, q);
 	}
 
-	removeNodeIntAtN(1, &lli);
-	insertNodeIntAtN(5, 222, &lli);
-
-	for (int i = 0; i < lli.length; i++){
-		printf("%d\n", retrieveDataNodeInt(i, &lli));
+	for (int i = 0; i < 5; i++){
+		printf("%d\n", pop(q));
 	}
 
 	retrieveDataNodeInt(100, &lli);
